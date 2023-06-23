@@ -21,6 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import jdk.nashorn.internal.runtime.Debug;
 
 public class CitizenRegion {
 
@@ -171,6 +172,7 @@ public class CitizenRegion {
 
 	public static void cleanUp() {
 		for (CitizenRegion r : regionCache.values()) {
+			r.despawnRegion();
 			r.citizenRoster.clear();
 			r.sceneryRoster.clear();
 			r.entities.clear();
